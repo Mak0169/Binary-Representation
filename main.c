@@ -2,8 +2,18 @@
 #include <stdlib.h>
 
 void getBinary(unsigned x) {
-    for (int i = 31; i >= 0; --i) {
-        printf("%d", (x >> i) & 1);
+    if (x < 16) {
+        for (int i = 3; i >= 0; --i) {
+            printf("%d", (x >> i) & 1);
+        }
+    } else if ((x >= 16) & (x < 1310)) {
+        for (int i = 7; i >= 0; --i) {
+            printf("%d", (x >> i) & 1);
+        }
+    } else {
+        for (int i = 31; i >= 0; --i) {
+            printf("%d", (x >> i) & 1);
+        }
     }
 }
 
